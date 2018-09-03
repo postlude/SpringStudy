@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="calculator" class="com.javalec.ex.Calculator" />
+	
+	<bean id="myCalculator" class="com.javalec.ex.MyCalculator">
+		<property name="calculator">
+			<ref bean="calculator"/>
+		</property>
+		<property name="firstNum" value="10" />
+		<property name="secondNum" value="2"></property>
+	</bean>
+	
+	<!-- setter가 없으면 아예 xml 작성할 때 세팅이 안됨 -->
+	<bean id="test" class="com.javalec.ex.Test">
+		<property name="list">
+			<list>
+				<value>list value 1</value>
+				<value>list value 2</value>
+				<value>list value 3</value>
+			</list>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="key1" value="1"/>
+				<entry key="key2" value="2"/>
+				<entry key="key3" value="3"/>
+			</map>
+		</property>
+		
+	</bean>
+
+</beans>
