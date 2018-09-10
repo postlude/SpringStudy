@@ -20,7 +20,11 @@ public class ApplicationConfig {
 	private String sub_adminPw;
 	
 	@Bean
+	// static 아니면 정상적으로 세팅이 안됨
+	// 메소드 이름은 반드시 Properties 일 필요는 없음
 	public static PropertySourcesPlaceholderConfigurer Properties() {
+//		System.out.println("Properties");
+		
 		PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
 		
 		Resource[] locations = new Resource[2];
